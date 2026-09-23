@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Personal portfolio website">
+	<title>My Portfolio</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<a class="skip-link" href="#main-content">Skip to content</a>
+	<header>
+		<nav aria-label="Main navigation">
+			<a class="brand" href="#home" aria-label="Go to homepage">IITY</a>
+			<button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+				<span aria-hidden="true">&#9789;</span>
+				<span class="sr-only">Switch to dark mode</span>
+			</button>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span class="sr-only">Open navigation menu</span>
+			</button>
+			<ul id="primary-menu">
+				<li><a href="#about">About</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="main-content">
+		<section id="home" aria-labelledby="home-heading">
+			<div class="hero-copy">
+				<p class="eyebrow">Frontend developer in progress</p>
+				<h1 id="home-heading">Hi, I'm <span>ADITYA</span></h1>
+				<p class="hero-description">I build thoughtful, accessible websites with a focus on clear design and useful experiences.</p>
+				<div class="hero-actions">
+					<a class="button button-primary" href="#projects">View my work <span aria-hidden="true">&#8599;</span></a>
+					<a class="text-link" href="#contact">Let's connect</a>
+				</div>
+			</div>
+			<div class="hero-note" aria-label="Current availability">
+				<span class="status-dot"></span>
+				<span>Available for new opportunities</span>
+			</div>
+		</section>
+
+		<section id="about" aria-labelledby="about-heading">
+			<div class="section-heading">
+				<p class="eyebrow">A little about me</p>
+				<h2 id="about-heading">Curious by nature,<br><span>focused on details.</span></h2>
+			</div>
+			<div class="about-content">
+				<p>I am learning web development and building my skills through hands-on projects. I enjoy solving problems, learning new technologies, and turning ideas into websites that feel simple to use.</p>
+				<p>When I am away from the screen, I am usually exploring new ideas, improving my craft, or finding inspiration in the world around me.</p>
+			</div>
+		</section>
+
+		<section id="skills" aria-labelledby="skills-heading">
+			<div class="section-heading section-heading-row">
+				<div>
+					<p class="eyebrow">What I work with</p>
+					<h2 id="skills-heading">My toolkit</h2>
+				</div>
+				<p class="section-intro">The tools I use to turn ideas into polished, responsive interfaces.</p>
+			</div>
+			<ul class="skill-list">
+				<li><strong>01</strong><span>HTML &amp; accessibility</span></li>
+				<li><strong>02</strong><span>CSS &amp; responsive design</span></li>
+				<li><strong>03</strong><span>JavaScript fundamentals</span></li>
+				<li><strong>04</strong><span>Git &amp; collaboration</span></li>
+				<li><strong>05</strong><span>React</span></li>
+				<li><strong>06</strong><span>Java</span></li>
+			</ul>
+		</section>
+
+		<section id="projects" aria-labelledby="projects-heading">
+			<div class="section-heading section-heading-row">
+				<div>
+					<p class="eyebrow">Selected work</p>
+					<h2 id="projects-heading">A few things I've made</h2>
+				</div>
+				<p class="section-intro">A growing collection of small projects built while learning and experimenting.</p>
+			</div>
+			<div class="project-grid">
+			<article class="project-card">
+				<div class="project-number">01 / 02</div>
+				<h3>Personal Portfolio</h3>
+				<p>A clean portfolio website designed to share my work, skills, and journey as a developer.</p>
+				<ul class="project-tags" aria-label="Technologies used">
+					<li>HTML</li>
+					<li>CSS</li>
+				</ul>
+				<a class="project-link" href="#contact">Ask me about it <span aria-hidden="true">&#8599;</span></a>
+			</article>
+			<article class="project-card project-card-featured">
+				<div class="project-number">02 / 02</div>
+				<h3>Weather App</h3>
+				<p>A responsive weather app that displays current conditions in a simple, easy-to-read interface.</p>
+				<ul class="project-tags" aria-label="Technologies used">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+				</ul>
+				<a class="project-link" href="#contact">Ask me about it <span aria-hidden="true">&#8599;</span></a>
+			</article>
+			</div>
+		</section>
+
+		<section id="contact" aria-labelledby="contact-heading">
+			<div class="contact-copy">
+				<p class="eyebrow">Have a project in mind?</p>
+				<h2 id="contact-heading">Let's make something<br><span>worth remembering.</span></h2>
+				<p>Interested in working together? I would love to hear what you are building.</p>
+				<div class="contact-links">
+					<a class="button button-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chitraaadhi0@gmail.com&amp;su=Portfolio%20inquiry" target="_blank" rel="noopener noreferrer">Send me an email <span aria-hidden="true">&#8599;</span></a>
+					<a href="https://github.com/aditya2111s" target="_blank" rel="noopener noreferrer">GitHub</a>
+					<a href="https://www.linkedin.com/in/s-aditya21" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+				</div>
+			</div>
+			<form id="contact-form" class="contact-form" action="https://formsubmit.co/chitraaadhi0@gmail.com" method="post">
+				<input type="hidden" name="_subject" value="New portfolio contact message">
+				<input type="hidden" name="_captcha" value="false">
+				<input type="hidden" name="_template" value="table">
+				<div class="form-field">
+					<label for="name">Name</label>
+					<input id="name" name="name" type="text" autocomplete="name" required>
+				</div>
+				<div class="form-field">
+					<label for="email">Email</label>
+					<input id="email" name="email" type="email" autocomplete="email" required>
+				</div>
+				<div class="form-field">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
+				</div>
+				<button class="button button-primary" type="submit">Send message <span aria-hidden="true">&#8599;</span></button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; <span id="current-year">2026</span> ADITYA</p>
+		<a href="#home">Back to top <span aria-hidden="true">&#8593;</span></a>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>
