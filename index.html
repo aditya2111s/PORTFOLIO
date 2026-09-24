@@ -3,20 +3,67 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Personal portfolio website">
-	<title>My Portfolio</title>
+	<meta name="description" content="Portfolio of Aditya, a frontend developer focused on thoughtful, accessible, and responsive web experiences.">
+	<meta name="author" content="Aditya">
+	<meta name="color-scheme" content="light dark">
+	<meta id="theme-color" name="theme-color" content="#f4f2ed">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Aditya — Frontend Developer Portfolio">
+	<meta property="og:description" content="Thoughtful, accessible, and responsive web experiences built by Aditya.">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Aditya — Frontend Developer Portfolio">
+	<meta name="twitter:description" content="Thoughtful, accessible, and responsive web experiences built by Aditya.">
+	<meta property="og:site_name" content="Aditya Portfolio">
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Aditya",
+			"jobTitle": "Frontend Developer",
+			"sameAs": [
+				"https://github.com/aditya2111s",
+				"https://www.linkedin.com/in/s-aditya21"
+			]
+		}
+	</script>
+	<title>Aditya — Frontend Developer Portfolio</title>
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap">
+	<script>
+		const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+		let theme = prefersDark ? 'dark' : 'light';
+
+		try {
+			const savedTheme = localStorage.getItem('portfolio-theme');
+
+			if (savedTheme === 'dark' || savedTheme === 'light') {
+				theme = savedTheme;
+			}
+		} catch {
+			// Continue with the system preference when storage is unavailable.
+		}
+
+		document.documentElement.dataset.theme = theme;
+		const bootstrapThemeColor = document.querySelector('meta[name="theme-color"]');
+
+		if (bootstrapThemeColor) {
+			bootstrapThemeColor.setAttribute('content', theme === 'dark' ? '#171918' : '#f4f2ed');
+		}
+	</script>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<a class="skip-link" href="#main-content">Skip to content</a>
 	<header>
 		<nav aria-label="Main navigation">
-			<a class="brand" href="#home" aria-label="Go to homepage">IITY</a>
-			<button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+			<a class="brand" href="#home" aria-label="Go to homepage">ADITYA</a>
+			<button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dark mode">
 				<span aria-hidden="true">&#9789;</span>
-				<span class="sr-only">Switch to dark mode</span>
+				<span class="sr-only">Dark mode</span>
 			</button>
-			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation menu">
 				<span></span>
 				<span></span>
 				<span></span>
@@ -31,7 +78,7 @@
 		</nav>
 	</header>
 
-	<main id="main-content">
+	<main id="main-content" tabindex="-1">
 		<section id="home" aria-labelledby="home-heading">
 			<div class="hero-copy">
 				<p class="eyebrow">Frontend developer in progress</p>
@@ -42,10 +89,10 @@
 					<a class="text-link" href="#contact">Let's connect</a>
 				</div>
 			</div>
-			<div class="hero-note" aria-label="Current availability">
-				<span class="status-dot"></span>
+			<aside class="hero-note" aria-label="Current availability">
+				<span class="status-dot" aria-hidden="true"></span>
 				<span>Available for new opportunities</span>
-			</div>
+			</aside>
 		</section>
 
 		<section id="about" aria-labelledby="about-heading">
@@ -94,7 +141,7 @@
 					<li>HTML</li>
 					<li>CSS</li>
 				</ul>
-				<a class="project-link" href="#contact">Ask me about it <span aria-hidden="true">&#8599;</span></a>
+				<a class="project-link" href="https://github.com/aditya2111s/PORTFOLIO" target="_blank" rel="noopener noreferrer">View portfolio source <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a>
 			</article>
 			<article class="project-card project-card-featured">
 				<div class="project-number">02 / 02</div>
@@ -105,7 +152,7 @@
 					<li>CSS</li>
 					<li>JavaScript</li>
 				</ul>
-				<a class="project-link" href="#contact">Ask me about it <span aria-hidden="true">&#8599;</span></a>
+				<a class="project-link" href="https://github.com/aditya2111s/JS---PROJECT/tree/main/WEATHER%20APP" target="_blank" rel="noopener noreferrer">View Weather App source <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a>
 			</article>
 			</div>
 		</section>
@@ -116,27 +163,30 @@
 				<h2 id="contact-heading">Let's make something<br><span>worth remembering.</span></h2>
 				<p>Interested in working together? I would love to hear what you are building.</p>
 				<div class="contact-links">
-					<a class="button button-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chitraaadhi0@gmail.com&amp;su=Portfolio%20inquiry" target="_blank" rel="noopener noreferrer">Send me an email <span aria-hidden="true">&#8599;</span></a>
-					<a href="https://github.com/aditya2111s" target="_blank" rel="noopener noreferrer">GitHub</a>
-					<a href="https://www.linkedin.com/in/s-aditya21" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+					<a class="button button-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chitraaadhi0@gmail.com&amp;su=Portfolio%20inquiry" target="_blank" rel="noopener noreferrer">Send me an email <span aria-hidden="true">&#8599;</span><span class="sr-only"> (opens in a new tab)</span></a>
+					<a href="https://github.com/aditya2111s" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+					<a href="https://www.linkedin.com/in/s-aditya21" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
 				</div>
 			</div>
-			<form id="contact-form" class="contact-form" action="https://formsubmit.co/chitraaadhi0@gmail.com" method="post">
+			<form id="contact-form" class="contact-form" action="https://formsubmit.co/chitraaadhi0@gmail.com" method="post" aria-describedby="form-privacy" aria-busy="false">
 				<input type="hidden" name="_subject" value="New portfolio contact message">
-				<input type="hidden" name="_captcha" value="false">
+				<input type="hidden" name="_captcha" value="true">
 				<input type="hidden" name="_template" value="table">
+				<input type="text" name="_honey" tabindex="-1" autocomplete="off" class="form-honey" aria-hidden="true">
 				<div class="form-field">
-					<label for="name">Name</label>
-					<input id="name" name="name" type="text" autocomplete="name" required>
+					<label for="name">Name <span class="required-mark" aria-hidden="true">*</span></label>
+					<input id="name" name="name" type="text" autocomplete="name" maxlength="100" required>
 				</div>
 				<div class="form-field">
-					<label for="email">Email</label>
-					<input id="email" name="email" type="email" autocomplete="email" required>
+					<label for="email">Email <span class="required-mark" aria-hidden="true">*</span></label>
+					<input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
 				</div>
 				<div class="form-field">
-					<label for="message">Message</label>
-					<textarea id="message" name="message" rows="5" required></textarea>
+					<label for="message">Message <span class="required-mark" aria-hidden="true">*</span></label>
+					<textarea id="message" name="message" rows="5" maxlength="2000" required></textarea>
 				</div>
+				<p id="form-privacy" class="form-privacy">Your message will be sent through FormSubmit to the inbox associated with this portfolio.</p>
+				<p id="form-status" class="form-status" role="status" aria-live="polite"></p>
 				<button class="button button-primary" type="submit">Send message <span aria-hidden="true">&#8599;</span></button>
 			</form>
 		</section>
